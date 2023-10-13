@@ -35,7 +35,8 @@ chain https://raw.githubusercontent.com/${github_user}/netboot.xyz-custom/master
 :option_four
 kernel http://goedel.dlitz.net/gparted/1/live/vmlinuz
 initrd http://goedel.dlitz.net/gparted/1/live/initrd.img
-imgargs vmlinuz boot=live union=overlay username=user config components vga=791 noswap nosplash fetch=http://goedel.dlitz.net/gparted/1/live/filesystem.squashfs
+imgargs vmlinuz initrd=/gparted/1/live/initrd.img boot=live union=overlay username=user config components noswap vga=791 toram=filesystem.squashfs ip= net.ifnames=0  nosplash fetch=http://goedel.dlitz.net/gparted/1/live/filesystem.squashfs
+
 boot || goto custom_exit
 
 
